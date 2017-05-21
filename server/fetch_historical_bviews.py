@@ -43,7 +43,7 @@ from dateutil.parser import parse
 try:
     from urllib.request import urlopen
 except ImportError:
-    from urllib import urlopen
+    from urllib.request import urlopen
 import argparse
 import time
 import socket

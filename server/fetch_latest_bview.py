@@ -42,17 +42,17 @@ import datetime
 try:
     from urllib.request import urlretrieve
 except ImportError:
-    from urllib import urlretrieve
+    from urllib.request import urlretrieve
 
 try:
     from urllib.parse import urlparse
 except ImportError:
-    from urlparse import urlparse
+    from urllib.parse import urlparse
 
 try:
     from http.client import HTTPConnection
 except ImportError:
-    from httplib import HTTPConnection
+    from http.client import HTTPConnection
 
 import time
 from pubsublogger import publisher

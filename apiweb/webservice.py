@@ -20,7 +20,7 @@ from flask import Flask, json, request
 try:
     import io
 except ImportError:
-    import StringIO as io
+    import io as io
 import csv
 
 import ipasn_redis as ipasn

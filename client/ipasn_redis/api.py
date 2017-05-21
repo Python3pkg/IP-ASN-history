@@ -3,7 +3,7 @@
 
 import redis
 try:
-    from itertools import izip as zip
+    
 except ImportError:  # will be 3.x series
     pass
 
@@ -38,7 +38,7 @@ class IPASN(object):
         keys = [ip + '/32']
         try:
             ip_split = [int(digit) for digit in ip.split('.')]
-            ziped = zip([zip(ip_split, m) for m in reversed(self.netmasks)], range(30, 0, -1))
+            ziped = list(zip([list(zip(ip_split, m)) for m in reversed(self.netmasks)], list(range(30, 0, -1))))
             keys += ['{}.{}.{}.{}/{mask}'.format(mask=mask, *[x & z for x, z in val]) for val, mask in ziped]
         except Exception as e:
             if not self.skip_exception:
